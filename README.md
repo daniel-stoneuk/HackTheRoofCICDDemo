@@ -1,5 +1,7 @@
 # HackTheRoofCICDDemo
 
+![CI/CD Image](https://cloud.google.com/solutions/continuous-integration/images/hero-banner.png)
+
 ## Fork this repository
 1. Navigate to https://github.com/dslovin/HackTheRoofCICDDemo
 2. Click the "Fork" button on the top right
@@ -30,37 +32,14 @@
 | Branch (regex) | .* |
 | Included files filter (glob) | _leave empty_ |
 | Ignored files filter (glob) | _leave empty_ |
-| Build Configuration | Dockerfile |
-| Dockerfile directory | / |
+| Build Configuration | Cloud Build configuration file (yaml or json) |
+| Cloud Build configuration file location  | / cloudbuild.yaml |
 | Dockerfile name | Dockerfile |
-| Image name | gcr.io/**[project name]**/github.com/**[YOUR GITHUB USERNAME]**/hacktheroofcicddemo:$SHORT_SHA (this should be default) |
 10. Click `Create trigger`
 11. Click `Run trigger` and ensure that Cloud Build is building the container without errors 
+12. Navigate to `History` to check the build history for this to ensure no errors
 
-At this point, Google Cloud Build should be building the container and storing it in [Google Container Registry](https://cloud.google.com/container-registry/)
+At this point, Google Cloud Build should be building the container and storing it in [Google Container Registry](https://cloud.google.com/container-registry/) and deploying to cloud run!
 
 ## Edit Container to Confirm
-
-## Setup Repository
-Use [this repository] for the lab by entering this command into Cloud Shell
-```bash 
-mkdir htr
-cd htr
-git clone https://github.com/dslovin/HackTheRoofCICDDemo
-```
-
-## Create Github Repository
-We will create a project called "htr_lab" under your account. Use your web browser
-1. Navigate to [GitHub's new project page](https://github.com/new)
-2. For repository name, use "htr_lab"
-3. Choose between Public and Private project (both work for this lab)
-4. Click "Create Repository"
-5. Push our code to the newly created 
-```bash
-
-
-```
-
-## TODO
-Create 4 Projects
-Cloud Build API
+Now edit the container, follow the history and see if it works! Try putting an error in the Dockerfile and see what happens.
