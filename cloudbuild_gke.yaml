@@ -10,4 +10,6 @@ steps:
   args: ['beta', 'run', 'deploy', 'hacktheroofcicddemo', '--image', 'gcr.io/$PROJECT_ID/hacktheroofcicddemo:$BUILD_ID', '--region', 'us-central1','--platform', 'managed', '--quiet']
   # deploy to k8s cluster
 - name: 'gcr.io/cloud-builders/gke-deploy:stable'
-  args: ['run', '--image', 'gcr.io/$PROJECT_ID/hacktheroofcicddemo:$BUILD_ID', '--location', 'us-east1b', '--cluster', 'htr-gke']
+  args: ['run', '--image', 'gcr.io/$PROJECT_ID/hacktheroofcicddemo:$BUILD_ID', '--location', 'us-east1-b', '--cluster', 'htr-gke']
+- name: 'contact-me'
+  args: ['echo', 'For questions, reach out to dslovin@google.com! Cheers!!']
