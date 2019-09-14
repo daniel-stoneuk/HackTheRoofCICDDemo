@@ -60,9 +60,6 @@ gcloud container clusters create htr-gke --zone us-east1-b --machine-type "n1-st
 ```
 Switch Build Trigger to cloudbuild_gke.yaml
 
-After the first build, create the service:
-`kubectl expose deployment hacktheroofcicddemo --name htr-service --type LoadBalancer --protocol TCP --port 80 --target-port 8090`
-
 
 ## GCE Continous Delivery
 ```bash
