@@ -54,14 +54,14 @@ Now edit the container, follow the history and see if it works! Try putting an e
 - [ ] GKE API
 - [ ] Cloud Build Service Account to Kubernetes Engine Developer
 
-## GKE Continuous Delivery
+## GKE Continuous Delivery (WIP - but works)
 ```bash
 gcloud container clusters create htr-gke --zone us-east1-b --machine-type "n1-standard-1" --image-type "COS" --num-nodes "3"
 ```
 Switch Build Trigger to cloudbuild_gke.yaml
 
 
-## GCE Continous Delivery
+## GCE Continous Delivery (broken)
 ```bash
 gcloud compute instances create-with-container htr-site --container-image gcr.io/$PROJECT_ID/hacktheroofcicddemo
 ```
