@@ -44,4 +44,10 @@ At this point, Google Cloud Build should be building the container and storing i
 ## Edit Container to Confirm
 Now edit the container, follow the history and see if it works! Try putting an error in the Dockerfile and see what happens.
 
-[ ] GKE API
+
+
+## TODO
+- [ ] Create 4 Projects
+- [ ] Cloud Build API
+- [ ] Cloud Build Service Account to Cloud Run Service Account
+- [ ] GKE API
