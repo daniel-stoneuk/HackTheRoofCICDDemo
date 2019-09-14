@@ -8,5 +8,5 @@ steps:
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'run', 'deploy', 'hacktheroofcicddemo', '--image', 'gcr.io/$PROJECT_ID/hacktheroofcicddemo:$BUILD_ID', '--region', 'us-central1','--platform', 'managed', '--quiet']
-- name: 'contact-me'
+- name: 'debian'
   args: ['echo', 'For questions, reach out to dslovin@google.com! Cheers!!']
