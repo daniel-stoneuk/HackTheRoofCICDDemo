@@ -53,6 +53,7 @@ Now edit the container, follow the history and see if it works! Try putting an e
 - [ ] Cloud Build Service Account to Cloud Run Admin
 - [ ] GKE API
 - [ ] Cloud Build Service Account to Kubernetes Engine Developer
+- [ ] Cloud Vision API
 
 ## GKE Continuous Delivery (WIP - but works)
 ```bash
@@ -65,3 +66,7 @@ Switch Build Trigger to cloudbuild_gke.yaml
 ```bash
 gcloud compute instances create-with-container htr-site --container-image gcr.io/$PROJECT_ID/hacktheroofcicddemo
 ```
+
+## Add ACLs to Cloud Storage
+gsutil acl ch -u derek@dslovin.com:R gs://chalupa-images/1.jpg (for 1)
+gsutil acl ch -u 990943260827-compute@developer.gserviceaccount.com:R gs://chalupa-images/1.jpg
