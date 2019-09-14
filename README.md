@@ -60,6 +60,26 @@ gcloud container clusters create htr-gke --zone us-east1-b --machine-type "f1-mi
 ```
 Switch Build Trigger to cloudbuild_gke.yaml
 
+After the first build, create the service:
+```yaml
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "hacktheroofcicddemo-service"
+  namespace: "default"
+  labels:
+    app.kubernetes.io/managed-by: "gcp-cloud-build-deploy"
+spec:
+  ports:
+  - protocol: "TCP"
+    port: 8090
+    targetPort: 80
+  selector:
+    app: "hacktheroofcicddemo"
+  type: "LoadBalancer"
+  loadBalancerIP: ""
+```
+
 ## GCE Continous Delivery
 ```bash
 gcloud compute instances create-with-container htr-site --container-image gcr.io/$PROJECT_ID/hacktheroofcicddemo
