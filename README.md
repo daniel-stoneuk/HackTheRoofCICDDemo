@@ -56,29 +56,13 @@ Now edit the container, follow the history and see if it works! Try putting an e
 
 ## GKE Continuous Delivery
 ```bash
-gcloud container clusters create htr-gke --zone us-east1-b --machine-type "f1-micro" --image-type "COS" --num-nodes "3"
+gcloud container clusters create htr-gke --zone us-east1-b --machine-type "n1-standard-1" --image-type "COS" --num-nodes "3"
 ```
 Switch Build Trigger to cloudbuild_gke.yaml
 
 After the first build, create the service:
-```yaml
-apiVersion: "v1"
-kind: "Service"
-metadata:
-  name: "hacktheroofcicddemo-service"
-  namespace: "default"
-  labels:
-    app.kubernetes.io/managed-by: "gcp-cloud-build-deploy"
-spec:
-  ports:
-  - protocol: "TCP"
-    port: 8090
-    targetPort: 80
-  selector:
-    app: "hacktheroofcicddemo"
-  type: "LoadBalancer"
-  loadBalancerIP: ""
-```
+`kubectl expose deployment hacktheroofcicddemo --name htr-service --type LoadBalancer --protocol TCP --port 80 --target-port 8090`
+
 
 ## GCE Continous Delivery
 ```bash
