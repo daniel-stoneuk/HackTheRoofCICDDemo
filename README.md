@@ -51,3 +51,16 @@ Now edit the container, follow the history and see if it works! Try putting an e
 - [ ] Cloud Build API
 - [ ] Cloud Build Service Account to Cloud Run Service Account
 - [ ] GKE API
+
+## GKE Continuous Delivery
+```bash
+gcloud config set project rare-bounty-252819
+gcloud config set compute/zone us-east1b
+gcloud config set compute/region us-east1
+gcloud container clusters create htr-gke --zone us-east1-b --machine-type "f1-micro" --image-type "COS" --num-nodes "3"
+```
+
+## GCE Continous Delivery
+```bash
+gcloud compute instances create-with-container htr-site --container-image gcr.io/$PROJECT_ID/hacktheroofcicddemo
+```
