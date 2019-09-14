@@ -8,16 +8,4 @@ steps:
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'run', 'deploy', 'hacktheroofcicddemo', '--image', 'gcr.io/$PROJECT_ID/hacktheroofcicddemo:$BUILD_ID', '--region', 'us-central1','--platform', 'managed', '--quiet']
-  # deploy to k8s cluster
-#- name: 'gcr.io/cloud-builders/kubectl'
-#  args: 
-#  - set
-#  - image
-#  - deployment
-#  - k-htr 
-#  - hacktheroofcicddemo-sha256=gcr.io/$PROJECT_ID/hacktheroofcicddemo:$BUILD_ID
-#  env:
-#  - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
-#  - 'CLOUDSDK_CONTAINER_CLUSTER=ds-k8s-private'
-#images:
-#- gcr.io/$PROJECT_ID/website
+
