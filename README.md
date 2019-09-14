@@ -49,14 +49,16 @@ Now edit the container, follow the history and see if it works! Try putting an e
 ## TODO
 - [ ] Create 4 Projects
 - [ ] Cloud Build API
-- [ ] Cloud Build Service Account to Cloud Run Service Account
+- [ ] Cloud Build Service Account to Service Account User
+- [ ] Cloud Build Service Account to Cloud Run Admin
 - [ ] GKE API
+- [ ] Cloud Build Service Account to Kubernetes Engine Developer
 
 ## GKE Continuous Delivery
 ```bash
 gcloud container clusters create htr-gke --zone us-east1-b --machine-type "f1-micro" --image-type "COS" --num-nodes "3"
-
 ```
+Switch Build Trigger to cloudbuild_gke.yaml
 
 ## GCE Continous Delivery
 ```bash
