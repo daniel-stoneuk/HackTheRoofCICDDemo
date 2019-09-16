@@ -2,8 +2,6 @@
 
 ![CI/CD Image](https://cloud.google.com/solutions/continuous-integration/images/hero-banner.png)
 
-![Solution Architecture](https://raw.githubusercontent.com/dslovin/HackTheRoofCICDDemo/master/%5Bgcpdraw%5D%202019-09-16T15_10_59Z.svg)
-
 ## Fork this repository
 1. Navigate to https://github.com/dslovin/HackTheRoofCICDDemo
 2. Click the "Fork" button on the top right
